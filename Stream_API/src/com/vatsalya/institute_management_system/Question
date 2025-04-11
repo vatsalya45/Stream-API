@@ -1,0 +1,523 @@
+Advanced Student and Institute Management System with Stream API
+-------------------------------------------------------------------
+Objective:
+Enhance the Student Management System by utilizing the Stream API for more complex operations such as filtering, mapping, and advanced data manipulation.
+
+Problem Statement:
+You are required to create an advanced StudentManagement class that manages a list of students in an institute. Use the Stream API to perform complex operations.
+
+Class Definitions:
+
+Student Class:
+
+Attributes:
+name: String: (private)
+gender: String: (private)
+department: String: (private)
+gpa: double: (private)
+years_of_study: int: (private)
+
+Constructor:
+A parameterized constructor to initialize all attributes.
+Methods:
+Getters and setters for each attribute.
+toString method to return a string representation of the student.
+
+StudentManagement Class:
+
+Attribute:
+students: List<Student>: (private, static)
+
+Methods:
+method name : addStudent
+parameters : (String name, String gender, String department, double gpa, int years_of_study):
+return type: void
+modifiers: static, private
+Logic :  Adds a new student to the list.
+User inputs invalid data, such as a GPA outside the acceptable range or negative years of study. IllegalArgumentException for invalid GPA or years of study.
+
+
+method name: listAllStudents()
+return type: void
+modifiers: static, private
+Logics: Lists all students.
+
+method name: sortStudentsByGpa()
+return type: void
+modifiers: static, private
+Logics: Sorts students by GPA. NoSuchElementException if the list is empty.
+
+method name: findTopGpaByDepartment()
+return type: void
+modifiers: static, private
+Logics: Finds and prints the student with the highest GPA in each department. NoSuchElementException if there are no students in a department.
+
+
+method name: categorizeAndPrintTopGpa()
+return type: void
+modifiers: static, private
+Logics: Categorizes students by gender and department, finds the student with the highest GPA in each category, and prints the results. NoSuchElementException if no students are available to categorize.
+
+method name: getAverageGpaByDepartment()
+return type: void
+modifiers: static, private
+Logics: Finds the average GPA of students in each department.
+
+method name: getTopNExperiencedStudents(int n)
+parameter: (int n)
+return type: void
+modifiers: static, private
+Logics: Finds the top N students with the highest years of study.
+IllegalArgumentException if n is less than or equal to 0 or greater than the number of students.
+
+
+method name: getGenderRatioByDepartment()
+return type: void
+modifiers: static, private
+Logics: Calculates and prints the gender ratio (male to female) in each department. NoSuchElementException if no students are available to calculate gender ratios.
+
+method name: filterStudentsByGpa
+parameter: (double minGpa)
+return type: void
+modifiers: static, private
+Logics: Filters and prints students with a GPA above a specified threshold(7.0).
+IllegalArgumentException for invalid GPA range.
+
+method name: getDepartmentWithHighestAverageGpa()
+return type: void
+modifiers: static, private
+Logics: Finds and prints the department with the highest average GPA.
+
+
+method name: findStudentsByYearsOfStudyRange
+parameters: (int minYears, int maxYears)
+return type: void
+modifiers: static, private
+Logics: Finds and prints students whose years of study fall within a specified range. IllegalArgumentException if minYears > maxYears
+
+
+method name: findStudentsByDepartmentAndGpa
+Parameters: (String department, double minGpa)
+return type: void
+modifiers: static, private
+Logics: Finds and prints students in a specific department with a GPA above a specified threshold(6.0). IllegalArgumentException for invalid GPA range.
+NoSuchElementException if no students meet the criteria.
+
+
+In main method:
+Use a Scanner object to read user input. A switch statement is used to handle different operations based on user input.
+In the all methods based on given condition throw appropriate exceptions and handle it to ensure valid input types and meaningful error messages are provided.
+
+
+Sample Output : 
+
+Student Management System:
+1. Add Student
+2. List All Students
+3. Sort Students by GPA
+4. Find Top GPA by Department
+5. Categorize and Print Top GPA
+6. Get Average GPA by Department
+7. Get Top N Experienced Students
+8. Get Gender Ratio by Department
+9. Filter Students by GPA
+10. Get Department with Highest Average GPA
+11. Find Students by Years of Study Range
+12. Find Students by Department and GPA
+13. Exit
+1
+Enter student name:
+Amarjeet
+Enter gender:
+Male
+Enter department:
+Java
+Enter GPA:
+9.5
+Enter years of study:
+2
+Student added successfully.
+
+Student Management System:
+1. Add Student
+2. List All Students
+3. Sort Students by GPA
+4. Find Top GPA by Department
+5. Categorize and Print Top GPA
+6. Get Average GPA by Department
+7. Get Top N Experienced Students
+8. Get Gender Ratio by Department
+9. Filter Students by GPA
+10. Get Department with Highest Average GPA
+11. Find Students by Years of Study Range
+12. Find Students by Department and GPA
+13. Exit
+1
+Enter student name:
+Ravi
+Enter gender:
+Male
+Enter department:
+Spring
+Enter GPA:
+9.8
+Enter years of study:
+3
+Student added successfully.
+
+Student Management System:
+1. Add Student
+2. List All Students
+3. Sort Students by GPA
+4. Find Top GPA by Department
+5. Categorize and Print Top GPA
+6. Get Average GPA by Department
+7. Get Top N Experienced Students
+8. Get Gender Ratio by Department
+9. Filter Students by GPA
+10. Get Department with Highest Average GPA
+11. Find Students by Years of Study Range
+12. Find Students by Department and GPA
+13. Exit
+1
+Enter student name:
+John
+Enter gender:
+Male
+Enter department:
+C
+Enter GPA:
+3.0
+Enter years of study:
+3
+Student added successfully.
+
+Student Management System:
+1. Add Student
+2. List All Students
+3. Sort Students by GPA
+4. Find Top GPA by Department
+5. Categorize and Print Top GPA
+6. Get Average GPA by Department
+7. Get Top N Experienced Students
+8. Get Gender Ratio by Department
+9. Filter Students by GPA
+10. Get Department with Highest Average GPA
+11. Find Students by Years of Study Range
+12. Find Students by Department and GPA
+13. Exit
+1
+Enter student name:
+ALice
+Enter gender:
+Female
+Enter department:
+Java
+Enter GPA:
+8.9
+Enter years of study:
+2
+Student added successfully.
+
+Student Management System:
+1. Add Student
+2. List All Students
+3. Sort Students by GPA
+4. Find Top GPA by Department
+5. Categorize and Print Top GPA
+6. Get Average GPA by Department
+7. Get Top N Experienced Students
+8. Get Gender Ratio by Department
+9. Filter Students by GPA
+10. Get Department with Highest Average GPA
+11. Find Students by Years of Study Range
+12. Find Students by Department and GPA
+13. Exit
+2
+Student{name='Amarjeet', gender='Male', department='Java', gpa=9.5, years_of_study=2}
+Student{name='Ravi', gender='Male', department='Spring', gpa=9.8, years_of_study=3}
+Student{name='John', gender='Male', department='C', gpa=3.0, years_of_study=3}
+Student{name='ALice', gender='Female', department='Java', gpa=8.9, years_of_study=2}
+
+Student Management System:
+1. Add Student
+2. List All Students
+3. Sort Students by GPA
+4. Find Top GPA by Department
+5. Categorize and Print Top GPA
+6. Get Average GPA by Department
+7. Get Top N Experienced Students
+8. Get Gender Ratio by Department
+9. Filter Students by GPA
+10. Get Department with Highest Average GPA
+11. Find Students by Years of Study Range
+12. Find Students by Department and GPA
+13. Exit
+3
+Student{name='John', gender='Male', department='C', gpa=3.0, years_of_study=3}
+Student{name='ALice', gender='Female', department='Java', gpa=8.9, years_of_study=2}
+Student{name='Amarjeet', gender='Male', department='Java', gpa=9.5, years_of_study=2}
+Student{name='Ravi', gender='Male', department='Spring', gpa=9.8, years_of_study=3}
+
+Student Management System:
+1. Add Student
+2. List All Students
+3. Sort Students by GPA
+4. Find Top GPA by Department
+5. Categorize and Print Top GPA
+6. Get Average GPA by Department
+7. Get Top N Experienced Students
+8. Get Gender Ratio by Department
+9. Filter Students by GPA
+10. Get Department with Highest Average GPA
+11. Find Students by Years of Study Range
+12. Find Students by Department and GPA
+13. Exit
+5
+Gender: Female, Department: Java, Student: Student{name='ALice', gender='Female', department='Java', gpa=8.9, years_of_study=2}
+Gender: Male, Department: Java, Student: Student{name='Amarjeet', gender='Male', department='Java', gpa=9.5, years_of_study=2}
+Gender: Male, Department: C, Student: Student{name='John', gender='Male', department='C', gpa=3.0, years_of_study=3}
+Gender: Male, Department: Spring, Student: Student{name='Ravi', gender='Male', department='Spring', gpa=9.8, years_of_study=3}
+
+Student Management System:
+1. Add Student
+2. List All Students
+3. Sort Students by GPA
+4. Find Top GPA by Department
+5. Categorize and Print Top GPA
+6. Get Average GPA by Department
+7. Get Top N Experienced Students
+8. Get Gender Ratio by Department
+9. Filter Students by GPA
+10. Get Department with Highest Average GPA
+11. Find Students by Years of Study Range
+12. Find Students by Department and GPA
+13. Exit
+6
+Department: Java, Average GPA: 9.2
+Department: C, Average GPA: 3.0
+Department: Spring, Average GPA: 9.8
+
+Student Management System:
+1. Add Student
+2. List All Students
+3. Sort Students by GPA
+4. Find Top GPA by Department
+5. Categorize and Print Top GPA
+6. Get Average GPA by Department
+7. Get Top N Experienced Students
+8. Get Gender Ratio by Department
+9. Filter Students by GPA
+10. Get Department with Highest Average GPA
+11. Find Students by Years of Study Range
+12. Find Students by Department and GPA
+13. Exit
+7
+Enter the number of top experienced students to retrieve:
+3
+Student{name='John', gender='Male', department='C', gpa=3.0, years_of_study=3}
+Student{name='Ravi', gender='Male', department='Spring', gpa=9.8, years_of_study=3}
+Student{name='ALice', gender='Female', department='Java', gpa=8.9, years_of_study=2}
+
+Student Management System:
+1. Add Student
+2. List All Students
+3. Sort Students by GPA
+4. Find Top GPA by Department
+5. Categorize and Print Top GPA
+6. Get Average GPA by Department
+7. Get Top N Experienced Students
+8. Get Gender Ratio by Department
+9. Filter Students by GPA
+10. Get Department with Highest Average GPA
+11. Find Students by Years of Study Range
+12. Find Students by Department and GPA
+13. Exit
+8
+Department: Java, Male:Female Ratio = 1:1
+Department: C, Male:Female Ratio = 1:0
+Department: Spring, Male:Female Ratio = 1:0
+
+Student Management System:
+1. Add Student
+2. List All Students
+3. Sort Students by GPA
+4. Find Top GPA by Department
+5. Categorize and Print Top GPA
+6. Get Average GPA by Department
+7. Get Top N Experienced Students
+8. Get Gender Ratio by Department
+9. Filter Students by GPA
+10. Get Department with Highest Average GPA
+11. Find Students by Years of Study Range
+12. Find Students by Department and GPA
+13. Exit
+9
+Enter minimum GPA to filter:
+8.0
+Error: GPA must be between 0.0 and 6.5.
+
+Student Management System:
+1. Add Student
+2. List All Students
+3. Sort Students by GPA
+4. Find Top GPA by Department
+5. Categorize and Print Top GPA
+6. Get Average GPA by Department
+7. Get Top N Experienced Students
+8. Get Gender Ratio by Department
+9. Filter Students by GPA
+10. Get Department with Highest Average GPA
+11. Find Students by Years of Study Range
+12. Find Students by Department and GPA
+13. Exit
+9
+Enter minimum GPA to filter:
+6.5
+Student{name='ALice', gender='Female', department='Java', gpa=8.9, years_of_study=2}
+Student{name='Amarjeet', gender='Male', department='Java', gpa=9.5, years_of_study=2}
+Student{name='Ravi', gender='Male', department='Spring', gpa=9.8, years_of_study=3}
+
+Student Management System:
+1. Add Student
+2. List All Students
+3. Sort Students by GPA
+4. Find Top GPA by Department
+5. Categorize and Print Top GPA
+6. Get Average GPA by Department
+7. Get Top N Experienced Students
+8. Get Gender Ratio by Department
+9. Filter Students by GPA
+10. Get Department with Highest Average GPA
+11. Find Students by Years of Study Range
+12. Find Students by Department and GPA
+13. Exit
+10
+Department with highest average GPA: Spring, Average GPA: 9.8
+
+Student Management System:
+1. Add Student
+2. List All Students
+3. Sort Students by GPA
+4. Find Top GPA by Department
+5. Categorize and Print Top GPA
+6. Get Average GPA by Department
+7. Get Top N Experienced Students
+8. Get Gender Ratio by Department
+9. Filter Students by GPA
+10. Get Department with Highest Average GPA
+11. Find Students by Years of Study Range
+12. Find Students by Department and GPA
+13. Exit
+
+11
+Enter minimum years of study:
+2
+Enter maximum years of study:
+1
+Error: Minimum years cannot be greater than maximum years.
+
+Student Management System:
+1. Add Student
+2. List All Students
+3. Sort Students by GPA
+4. Find Top GPA by Department
+5. Categorize and Print Top GPA
+6. Get Average GPA by Department
+7. Get Top N Experienced Students
+8. Get Gender Ratio by Department
+9. Filter Students by GPA
+10. Get Department with Highest Average GPA
+11. Find Students by Years of Study Range
+12. Find Students by Department and GPA
+13. Exit
+11
+Enter minimum years of study:
+2
+Enter maximum years of study:
+3
+Student{name='John', gender='Male', department='C', gpa=3.0, years_of_study=3}
+Student{name='ALice', gender='Female', department='Java', gpa=8.9, years_of_study=2}
+Student{name='Amarjeet', gender='Male', department='Java', gpa=9.5, years_of_study=2}
+Student{name='Ravi', gender='Male', department='Spring', gpa=9.8, years_of_study=3}
+
+Student Management System:
+1. Add Student
+2. List All Students
+3. Sort Students by GPA
+4. Find Top GPA by Department
+5. Categorize and Print Top GPA
+6. Get Average GPA by Department
+7. Get Top N Experienced Students
+8. Get Gender Ratio by Department
+9. Filter Students by GPA
+10. Get Department with Highest Average GPA
+11. Find Students by Years of Study Range
+12. Find Students by Department and GPA
+13. Exit
+12
+Enter department:
+Java
+Enter minimum GPA:
+8.0
+Student{name='ALice', gender='Female', department='Java', gpa=8.9, years_of_study=2}
+Student{name='Amarjeet', gender='Male', department='Java', gpa=9.5, years_of_study=2}
+
+Student Management System:
+1. Add Student
+2. List All Students
+3. Sort Students by GPA
+4. Find Top GPA by Department
+5. Categorize and Print Top GPA
+6. Get Average GPA by Department
+7. Get Top N Experienced Students
+8. Get Gender Ratio by Department
+9. Filter Students by GPA
+10. Get Department with Highest Average GPA
+11. Find Students by Years of Study Range
+12. Find Students by Department and GPA
+13. Exit
+12
+Enter department:
+Java
+Enter minimum GPA:
+10.0
+
+Student Management System:
+1. Add Student
+2. List All Students
+3. Sort Students by GPA
+4. Find Top GPA by Department
+5. Categorize and Print Top GPA
+6. Get Average GPA by Department
+7. Get Top N Experienced Students
+8. Get Gender Ratio by Department
+9. Filter Students by GPA
+10. Get Department with Highest Average GPA
+11. Find Students by Years of Study Range
+12. Find Students by Department and GPA
+13. Exit
+Error: No students found in the specified department with GPA above the threshold.
+12
+Enter department:
+Python
+Enter minimum GPA:
+9.0
+Error: No students found in the specified department with GPA above the threshold.
+
+Student Management System:
+1. Add Student
+2. List All Students
+3. Sort Students by GPA
+4. Find Top GPA by Department
+5. Categorize and Print Top GPA
+6. Get Average GPA by Department
+7. Get Top N Experienced Students
+8. Get Gender Ratio by Department
+9. Filter Students by GPA
+10. Get Department with Highest Average GPA
+11. Find Students by Years of Study Range
+12. Find Students by Department and GPA
+13. Exit
+13
+Exiting...
